@@ -142,7 +142,7 @@ Cockpit is a nice web frontend to do basic monitoring and managements tasks. I s
 Sometimes you need a more modern kernel, for example very recent hardware. We can use the El Repo repository for that. The only cost is that secure boot will no longer function. To enable and install El Repo's 6.x kernel run the following commands:
 ```
 sudo dnf -y install elrepo-release
-sudo dnf -y install kernel-lt kernel-lt-modules kernel-lt-modules-extra kernel-lt-tools
+sudo yum --enablerepo=elrepo-kernel install kernel-lt
 ```
 Now reboot and press the escape key to show the grub menu and select the new kernel from the list.
 
