@@ -148,7 +148,7 @@ Now reboot and press the escape key to show the grub menu and select the new ker
 
 We can replace ```lt``` for ```ml``` if you want even newer mainline kernel as opposed to the long term support kernel. If everything works well run the following commands to set a new default kernel and remove the old default kernel:
 ```
-sudo echo -e "DEFAULTKERNEL=kernel-lt-core\nUPDATEDEFAULT=yes" > /etc/sysconfig/kernel
+sudo echo -e "DEFAULTKERNEL=kernel-lt-core\nUPDATEDEFAULT=yes" | sudo tee /etc/sysconfig/kernel
 sudo dnf -y remove kernel kernel-\*
 ```
 You can also modify the kickstart to build your iso with a 6.x kernel instead. For more information see [this](https://elrepo.org/tiki/kernel-lt) page.
