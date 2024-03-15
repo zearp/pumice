@@ -146,7 +146,7 @@ sudo yum --enablerepo=elrepo-kernel install kernel-lt
 ```
 Now reboot and press the escape key to show the grub menu and select the new kernel from the list.
 
-If you need to compile kernel modules add ```kernel-lt-devel-matched``` to the list above. We can replace ```lt``` for ```ml``` if you want even newer mainline kernel as opposed to the long term support kernel. If everything works well run the following commands to set a new default kernel and remove the old default kernel:
+We can replace ```lt``` for ```ml``` if you want even newer mainline kernel as opposed to the long term support kernel. If everything works well run the following commands to set a new default kernel and remove the old default kernel:
 ```
 sudo echo -e "DEFAULTKERNEL=kernel-lt-core\nUPDATEDEFAULT=yes" > /etc/sysconfig/kernel
 sudo dnf -y remove kernel kernel-\*
