@@ -125,7 +125,7 @@ systemctl enable --now tuned
 
 # el repo
 #
-#%post%
+#%post
 #echo -e "DEFAULTKERNEL=kernel-lt-core\nUPDATEDEFAULT=yes" | tee /etc/sysconfig/kernel
 #%end
 
