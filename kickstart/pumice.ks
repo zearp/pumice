@@ -105,6 +105,8 @@ wget -q -nc -4 --no-check-certificate https://raw.githubusercontent.com/zearp/pu
 # fetch pfetch
 wget -q -nc -4 --no-check-certificate https://raw.githubusercontent.com/zearp/pumice/main/assets/pfetch -O /usr/local/bin/pfetch
 chmod 755 /usr/local/bin/pfetch
+# monitor the waves
+rpm -i https://kojipkgs.fedoraproject.org//packages/wavemon/0.9.4/4.fc38/x86_64/wavemon-0.9.4-4.fc38.x86_64.rpm
 # some peace and quiet
 touch /etc/skel/.hushlogin
 #echo "kernel.printk = 3 3 3 3" | tee /etc/sysctl.d/97-quiet-printk.conf
