@@ -159,7 +159,7 @@ sudo dnf -y remove kernel kernel-core
 You can also modify the kickstart to build your iso with a 6.x kernel instead. For more information see [this](https://elrepo.org/tiki/kernel-lt) page. In order to compile modules it may be needed to install the ```kernel-devel-matched``` package.
 
 ### AMD Drivers
-Only works with the stock 5.x kernels. This will give you OpenCL and some additonal video encoders/decoders. Download the latest installer rpm [here](https://repo.radeon.com/amdgpu-install/latest/rhel/9.3/) and install it:
+Only works with the stock 5.x kernels. This will give you OpenCL and some additonal video encoders/decoders. Download the latest installer rpm [here](https://repo.radeon.com/amdgpu-install/latest/rhel/9.4/) and install it:
 ```
 sudo rpm -i amdgpu-install*.rpm
 sudo amdgpu-install
