@@ -141,7 +141,13 @@ sudo fwupdmgr get-updates
 sudo fwupdmgr update
 ```
 ### Cockpit
-Cockpit is a nice web frontend to do basic monitoring and managements tasks. I suggest using it not only on servers but anywhere and also when you need to troubleshoot issues. It has some great utilities and access to log files and services and so on. The default location is ```http://localhost:9090```. For more information please read [this](https://www.redhat.com/sysadmin/intro-cockpit) page.
+Cockpit is a nice web frontend to do basic monitoring and managements tasks. I suggest using it not only on servers but anywhere and also when you need to troubleshoot issues. It has some great utilities and access to log files and services and so on. The default location is ```https://localhost:9090```. For more information please read [this](https://www.redhat.com/sysadmin/intro-cockpit) page.
+
+To get started run the following commands:
+```
+sudo dnf -y install cockpit && sudo systemctl enable --now cockpit.socket
+```
+You can now open ```https://localhost:9090``` in your browser. It is possible to use a Let's encrypt certiffcate using ```certbot```.
 
 ### El Repo kernel
 Sometimes you need a more modern kernel, for example very recent hardware. We can use the El Repo repository for that. The only cost is that secure boot will no longer function. To enable and install El Repo's 6.x kernel run the following commands:
