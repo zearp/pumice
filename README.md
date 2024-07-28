@@ -188,7 +188,7 @@ While we're at it let's install [uBlock Origin](https://addons.mozilla.org/en-GB
   ```
 - Less flickering when booting and old school network interface names:
   ```sh
-  grubby --update-kernel=ALL --args="loglevel=3 systemd.show_status=auto rd.udev.log_level=3 vt.global_cursor_default=0 biosdevname=0 net.ifnames=0"
+  sudo grubby --update-kernel=ALL --args="loglevel=3 systemd.show_status=auto rd.udev.log_level=3 vt.global_cursor_default=0 biosdevname=0 net.ifnames=0"
   ```
 - Sort apps alphabetically, logout and in to apply, don't use sudo here:
   ```sh
