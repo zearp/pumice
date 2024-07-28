@@ -210,7 +210,7 @@ grub2-tools-efi
 grub2-tools-extra
 grub2-tools-minimal
 grubby
-htop
+#htop
 initscripts
 # 5th gen and older should use libva-intel-driver or libva-intel-hybrid-driver
 intel-media-driver
@@ -235,7 +235,7 @@ mpv
 nano
 nautilus
 nvme-cli
-nvtop
+#nvtop
 pciutils
 #piper
 plymouth
