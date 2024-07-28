@@ -168,7 +168,7 @@ bat
 btop
 chkconfig
 chrome-gnome-shell
-cockpit
+#cockpit
 dracut-live
 efi-filesystem
 efibootmgr
@@ -189,7 +189,7 @@ glibc-all-langpacks
 gnome-disk-utility
 # uncomment if you don't intend to use the flatpak extension manager app
 #gnome-extensions-app
-gnome-font-viewer
+#gnome-font-viewer
 gnome-keyring
 #gnome-logs
 gnome-screenshot
