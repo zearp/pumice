@@ -194,6 +194,10 @@ While we're at it let's install [uBlock Origin](https://addons.mozilla.org/en-GB
   ```sh
   gsettings set org.gnome.shell app-picker-layout "[]"
   ```
+- Flatpak dark mode fix, add an enviroment variable using Flatseal:
+  ```sh
+  GTK_THEME=Adwaita-dark
+  ```
 - Sync login screen settings (gdm):
   ```sh
   sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/
