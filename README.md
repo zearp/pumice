@@ -206,6 +206,16 @@ While we're at it let's install [uBlock Origin](https://addons.mozilla.org/en-GB
   ```sh
   sudo grubby --update-kernel ALL --args acpi_backlight=none
   ```
+- Enable 8bitdo xbox gamepad:
+  ```sh
+  sudo nano /etc/udev/rules.d/99-8bitdo-xinput.rules
+  ```
+  ```
+  ACTION=="add", ATTRS{idVendor}=="2dc8", ATTRS{idProduct}=="310a", RUN+="/sbin/modprobe xpad", RUN+="/bin/sh -c 'echo 2dc8 310a > /sys/bus/usb/drivers/xpad/new_id'"
+  ```
+  ```sh
+  sudo udevadm control --reload-rules && sudo udevadm trigger
+  ```
 - Compiling kernel modules:
   ```sh
   sudo dnf -y install kernel-devel dkms
