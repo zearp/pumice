@@ -78,7 +78,7 @@ EOF
 dconf update
 %end
 
-# setup and populate flatpaks
+# setup flathub
 #
 %post
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -92,7 +92,6 @@ cat >> /usr/share/glib-2.0/schemas/org.gnome.software.gschema.override << EOF
 [org.gnome.software]
 download-updates=false
 EOF
-
 %end
 
 # setup some misc stuff
@@ -112,10 +111,7 @@ wget -q -nc -4 --no-check-certificate https://raw.githubusercontent.com/zearp/pu
 wget -q -nc -4 --no-check-certificate https://raw.githubusercontent.com/zearp/pumice/main/assets/pfetch -O /usr/local/bin/pfetch
 chmod 755 /usr/local/bin/pfetch
 # monitor the waves
-rpm -i https://kojipkgs.fedoraproject.org//packages/wavemon/0.9.4/4.fc38/x86_64/wavemon-0.9.4-4.fc38.x86_64.rpm
-# some peace and quiet
-touch /etc/skel/.hushlogin
-echo "kernel.printk = 3 3 3 3" | tee /etc/sysctl.d/97-quiet-printk.conf
+rpm -i https://kojipkgs.fedoraproject.org/packages/wavemon/0.9.4/4.fc38/x86_64/wavemon-0.9.4-4.fc38.x86_64.rpm
 %end
 
 # setup some services
@@ -141,6 +137,8 @@ tuned-adm profile desktop
 #
 %post
 dnf -y remove gnome-tour rocky-backgrounds gnome-shell-extension-background-logo
+dnf clean all
+dnf makecache
 %end
 
 # package selection
