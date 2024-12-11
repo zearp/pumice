@@ -75,6 +75,10 @@ cat > /etc/dconf/db/local.d/02-background << EOF
 picture-uri='file:///usr/share/backgrounds/pumice.jpg'
 picture-options='scaled'
 EOF
+cat > /etc/dconf/db/local.d/03-apptimeout << EOF
+[org/gnome/mutter]
+check-alive-timeout='10000'
+EOF
 dconf update
 %end
 
