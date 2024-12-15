@@ -82,6 +82,15 @@ EOF
 dconf update
 %end
 
+# enable persistent systemd logs -- needs testing
+# creating the directory should be enough to trigger the default "auto" configuration
+#
+%post
+mkdir /var/log/journal
+#echo "Storage=persistent" | tee >> /etc/systemd/journald.conf
+#echo "Compress=yes" | tee >> /etc/systemd/journald.conf
+%end
+
 # setup flathub
 #
 %post
