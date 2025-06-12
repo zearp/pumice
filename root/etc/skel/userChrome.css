@@ -1,0 +1,34 @@
+/* 
+	1: Create a folder called "chrome" in profile folder and "mv" this file to it
+	2: Go to about:config, search for userprof and if needed set it to "true"
+	3: Restart Firefox/LibreWolf/etc
+
+	Profile folder location can be found in "about:support" -- when using a Flatpak browser 
+	add "~/.var/apps/browser.name" in front of the profile folder path
+
+	Source: https://treypiepmeier.com/solutions/2019/09/left-close-tab-button-in-firefox
+*/
+
+.tabbrowser-tab .tab-close-button {
+  opacity: 0;
+  margin-left: -4.5px !important;
+  margin-right: 2px !important;
+}
+.tabbrowser-tab:not(:hover) .tab-close-button {
+  display:none;
+}
+.tabbrowser-tab:not([pinned="true"]):hover .tab-close-button {
+  opacity: 1;
+  margin-inline-end: 0;
+  /* OLD CODE before Fx113:
+  -moz-box-ordinal-group: 0 !important;
+  NEW CODE for Fx113: */
+  order:-1 !important;
+  display:unset !important;
+}
+ .tabbrowser-tab:not([pinned="true"]):hover .tab-icon-stack {
+  -moz-box-ordinal-group: 99999 !important;
+}
+.tabbrowser-tab:not([pinned="true"]):hover .tab-icon-stack:not([indicator-replaces-favicon]) {
+  display: none;
+}
