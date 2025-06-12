@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<image schemaversion="7.5" name="Pumice">
+	<description type="system">
+		<author>zearp</author>
+		<contact>https://github.com/zearp/pumice</contact>
+		<specification>Pumice Rocky 10</specification>
+	</description>
+	<preferences>
+		<version>10</version>
+		<packagemanager>dnf</packagemanager>
+		<locale>en_GB</locale>
+		<keytable>us</keytable>
+		<timezone>Europe/Amsterdam</timezone>
+		<release-version>10</release-version>
+	</preferences>
+	<repository type="rpm-md" alias="baseos" priority="1">
+		<source path="https://download.rockylinux.org/pub/rocky/$releasever/BaseOS/$basearch/os">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-$releasever"/>
+		</source>
+	</repository>
+	<repository type="rpm-md" alias="appstream" priority="1">
+		<source path="https://download.rockylinux.org/pub/rocky/$releasever/AppStream/$basearch/os">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-$releasever"/>
+		</source>
+	</repository>
+	<repository type="rpm-md" alias="crb" priority="1">
+		<source path="https://download.rockylinux.org/pub/rocky/$releasever/CRB/$basearch/os">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-$releasever"/>
+		</source>
+	</repository>
+	<repository type="rpm-md" alias="extras" priority="1">
+		<source path="https://download.rockylinux.org/pub/rocky/$releasever/extras/$basearch/os">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-$releasever"/>
+		</source>
+	</repository>
+	<repository type="rpm-md" alias="epel" priority="2">
+		<source path="https://dl.fedoraproject.org/pub/epel/$releasever/Everything/x86_64/">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-$releasever"/>
+		</source>
+	</repository>
+<!--
+	<repository type="rpm-md" alias="elrepo" sourcetype="mirrorlist">
+		<source path="http://mirrors.elrepo.org/mirrors-elrepo.el10">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-v2-elrepo.org"/>
+		</source>
+	</repository>
+	<repository type="rpm-md" alias="elrepo-extras" sourcetype="baseurl">
+		<source path="https://elrepo.org/linux/extras/el10/$basearch">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-v2-elrepo.org"/>
+		</source>
+	</repository>
+	<repository type="rpm-md" alias="elrepo-kernel" sourcetype="baseurl">
+		<source path="https://elrepo.org/linux/kernel/el10/$basearch">
+			<signing key="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-v2-elrepo.org"/>
+		</source>
+	</repository>
+-->
+	<profiles>
+		<profile name="Pumice" description="Pumice Rocky"/>
+	</profiles>
+	<packages type="image" profiles="Pumice">
+		<namedCollection name="anaconda-tools"/>
+		<namedCollection name="core"/>
+		<namedCollection name="fonts"/>
+		<namedCollection name="hardware-support"/>
+		<namedCollection name="multimedia"/>
+		<namedCollection name="networkmanager-submodules"/>
+		<namedCollection name="standard"/>
+		<package name="amd-ucode-firmware"/> <!-- amd micro code-->
+		<package name="anaconda"/>
+		<package name="anaconda-install-env-deps"/>
+		<package name="anaconda-liveinst"/>
+		<package name="bind-utils"/>
+		<package name="chrony"/>
+		<package name="cockpit"/>
+		<package name="cockpit-files"/>
+		<package name="cockpit-packagekit"/>
+		<package name="cockpit-storaged"/>
+		<package name="dracut-live"/>
+		<package name="elrepo-release"/>
+		<package name="epel-release"/>
+		<package name="flatpak"/>
+		<package name="fstrm"/>
+		<package name="glibc-all-langpacks"/>
+		<package name="gnome-bluetooth"/>
+		<package name="gnome-clocks"/>
+		<package name="gnome-control-center"/>
+		<package name="gnome-disk-utility"/>
+		<package name="gnome-keyring"/>
+		<package name="gnome-session-wayland-session"/>
+		<package name="gnome-software"/>
+		<package name="gnome-text-editor"/>
+		<package name="grub2-efi-x64"/>
+		<package name="grub2-efi-x64-cdboot"/>
+		<package name="grub2-efi-x64-modules"/>
+		<package name="grub2-pc"/>
+		<package name="grub2-pc-modules"/>
+		<package name="intel-vpl-gpu-rt"/>
+		<package name="isomd5sum"/>
+		<package name="kernel"/>
+		<package name="kernel-core"/>
+		<package name="kernel-modules"/>
+		<package name="kernel-modules-extra"/>
+		<package name="libva-intel-hybrid-driver"/>
+		<package name="livesys-scripts"/>
+		<package name="loupe"/>
+		<package name="microcode_ctl"/> <!-- intel micro code -->
+		<package name="nano"/>
+		<package name="nautilus"/>
+		<package name="ncdu"/>
+		<package name="PackageKit"/>
+		<package name="papers"/>
+		<package name="pcp"/>
+		<package name="pigz"/>
+		<package name="plymouth"/>
+		<package name="plymouth-theme-spinner"/>
+		<package name="ptyxis"/>
+		<package name="python3-pcp"/>
+		<package name="seahorse"/>
+		<package name="setroubleshoot-server"/>
+		<package name="shim-signed-x64"/>
+		<package name="sqlite"/>
+		<package name="systemd-oomd-defaults"/>
+		<package name="systemd-resolved"/>
+		<package name="thermald"/>
+		<package name="tio"/>
+		<package name="traceroute"/>
+		<package name="tuned"/>
+		<package name="xdg-utils"/>
+		<package name="yum-utils"/>
+		<package name="zram-generator"/>
+		<package name="zsh"/>
+		<package name="zstd"/>
+		<ignore name="gfs2-utils"/>
+		<ignore name="gnome-tour"/>
+		<ignore name="kernel-srpm-macros"/>
+		<ignore name="PackageKit-command-not-found"/>
+	</packages>
+	<packages type="image" profiles="Pumice">
+		<package name="amd-gpu-firmware"/>
+		<!--
+		<package name="atheros-firmware"/>
+		<package name="brcmfmac-firmware"/>
+		<package name="cirrus-audio-firmware"/>
+-->
+		<package name="intel-audio-firmware"/>
+		<!--
+		<package name="intel-vsc-firmware"/>
+-->
+		<package name="intel-gpu-firmware"/>
+		<!--
+		<package name="iwlegacy-firmware"/>
+		<package name="iwlwifi-dvm-firmware"/>
+-->
+		<package name="iwlwifi-mvm-firmware"/>
+		<package name="linux-firmware"/>
+		<package name="mt7xxx-firmware"/>
+		<!--
+		<package name="nvidia-gpu-firmware"/>
+		<package name="realtek-firmware"/>
+-->
+	</packages>
+	<packages type="bootstrap">
+		<package name="basesystem"/>
+		<package name="filesystem"/>
+	</packages>
+	<preferences profiles="Pumice">
+		<type image="iso" publisher="Pumice" volid="Pumice" primary="true" flags="dmsquash" filesystem="erofs" erofscompression="lzma,level=9" firmware="uefi" efifatimagesize="30" kernelcmdline="quiet rhgb inst.kdump_addon=off inst.geoloc=0 inst.keymap=US">
+			<bootloader name="grub2" grub_template="grub.template" console="console" timeout="60"/>
+		</type>
+	</preferences>
+	<users profiles="Pumice">
+		<!-- password will be erased by config.sh -->
+		<user name="root" groups="root" password="linux" home="/root" pwdformat="plain" />
+	</users>
+</image>

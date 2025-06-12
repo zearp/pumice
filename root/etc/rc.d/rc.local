@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+
+# hacky firstboot, only runs when liveuser does not exist
+#
+if getent passwd "liveuser" &>/dev/null; then
+	touch /tmp/we-are-live
+else
+	tuned-adm profile desktop
+	chmod 600 /etc/sudoers
+	dnf -y remove anaconda\* dracut-live kdump-utils livesys-scripts
+	systemctl mask kdump.service # service removed above, masked for the future
+	systemctl enable --now fstrim.timer
+	systemctl enable --now thermald
+	touch /tmp/hello-goodbye && rm /etc/rc.d/rc.local
+fi
+
+exit 0
